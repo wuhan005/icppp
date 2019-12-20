@@ -16,7 +16,7 @@ func main(){
 
 	// Web server start
 	r := gin.Default()
-	r.LoadHTMLGlob("template/*")
+	r.LoadHTMLGlob("./template/*")
 
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tpl", gin.H{
