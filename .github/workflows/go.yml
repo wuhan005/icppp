@@ -55,6 +55,6 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: registry.hub.docker.com
-          repository: wuhan005/icppp
+          repository: registry.hub.docker.com/wuhan005/icppp
           tag_format: "%YYYY%_%MM%_%DD%_%H%%m%%s%"
           auto_tag: true
