@@ -6,7 +6,6 @@ import (
 	"net/http"
 )
 
-
 func main(){
 	// Load config
 	conf := new(config)
