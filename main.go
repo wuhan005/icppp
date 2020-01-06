@@ -4,6 +4,7 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"strings"
 )
 
 func main(){
@@ -19,9 +20,10 @@ func main(){
 	r.LoadHTMLGlob("./template/*")
 
 	r.GET("/", func(c *gin.Context) {
+		host := strings.Split(c.Request.Host, ":")[0]
 		c.HTML(http.StatusOK, "index.tpl", gin.H{
-			"title": c.Request.Host,
-			"icp": conf.getICPNo(c.Request.Host),
+			"title": host,
+			"icp": conf.getICPNo(host),
 		})
 	})
 
