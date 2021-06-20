@@ -1,11 +1,9 @@
 FROM alpine:latest
 
 ADD icppp /home/app/
-COPY config /home/app/config
-COPY template /home/app/template
-COPY static /home/app/static
+COPY conf /home/app/conf
 
 WORKDIR /home/app
-ENTRYPOINT ["./icppp"]
+ENTRYPOINT ["./icppp web"]
 
 EXPOSE 9315
