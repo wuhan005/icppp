@@ -1,6 +1,0 @@
-[server]
-port=":9315"
-
-[[icp]]
-url=""
-no=""
