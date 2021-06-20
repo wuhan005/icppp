@@ -18,14 +18,11 @@
 
 ### Step 1:
 
-在 `/home/app/config` 路径下创建配置文件 `conf.toml`（路径也可自定义）。
+在 `/home/app/conf` 路径下创建配置文件 `icppp.toml`（路径也可自定义）。
 
 输入如下配置，其中 ICP 为你网站的域名以及备案信息。
 
 ```toml
-[server]
-port=":9315"
-
 [[icp]]
 url="abc.xyz"
 no="粤ICP备88888888号-1"
@@ -38,7 +35,7 @@ no="粤ICP备88888888号-2"
 ### Step 2:
 
 ```sh
-docker run -dt --name icppp -p 9315:9315 -v /home/app/config:/home/app/config wuhan005/icppp
+docker run -dt --name icppp -p 9315:9315 -v /home/app/conf:/home/app/conf wuhan005/icppp
 ```
 
 **注意 `-v` 文件夹的映射路径**
