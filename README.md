@@ -24,12 +24,12 @@
 
 ```toml
 [[icp]]
-url="abc.xyz"
-no="粤ICP备88888888号-1"
+url = "abc.xyz"
+no = "粤ICP备88888888号-1"
 
 [[icp]]
-url="qaz.wsx"
-no="粤ICP备88888888号-2"
+url = "qaz.wsx"
+no = "粤ICP备88888888号-2"
 ```
 
 ### Step 2:
@@ -54,5 +54,13 @@ www.abc.xyz {
     	header_upstream Host abc.xyz
     }
     tls abc@xyz.com
+}
+```
+
+```caddyfile
+# Caddy 2
+www.qaz.wsx {
+    encode gzip zstd
+    reverse_proxy * http://127.0.0.1:9315
 }
 ```
